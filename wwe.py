@@ -60,6 +60,7 @@ class wwe_network:
         stream = self._session.get(stream_link, headers=CONSTANTS.REALM_HEADERS).json()
 
         # Get our subtitle stream
+        subtitle_stream = ''
         for i in stream['subtitles']:
             if i['format'] == "vtt":
                 subtitle_stream = i['url']
